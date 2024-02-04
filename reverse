@@ -1,0 +1,17 @@
+def reverseBits(A):
+    result = 0
+    
+    # Iterate through each bit of the input integer
+    for _ in range(32):
+        # Extract the least significant bit of A
+        bit = A & 1
+        # Left-shift the result by one bit and add the extracted bit
+        result = (result << 1) + bit
+        # Right-shift A by one bit to move to the next bit
+        A >>= 1
+    
+    return result
+
+
+print(reverseBits(0))   # Output: 0
+print(reverseBits(3))   # Output: 3221225472
